@@ -10,7 +10,9 @@
     "build:ui": "rm -rf build &&  cd ../puhelinluettelo && npm run build --prod && cp -r build ../puhelinluettelo_backend/",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push origin master && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "author": "Tuomas Kytömaa",
   "license": "MIT",
@@ -22,6 +24,7 @@
     "mongoose-unique-validator": "^2.0.3"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.2"
   }
