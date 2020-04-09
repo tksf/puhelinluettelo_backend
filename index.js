@@ -11,14 +11,14 @@ app.use(express.static('build'))
 
 // app.use(morgan('tiny'))
 
-const morgan = require('morgan')
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post_data'))
-morgan.token('post_data', (req, res) => {
-	return (JSON.stringify({
-		name: req.body.name,
-		number: req.body.number
-	}))
-})
+// const morgan = require('morgan')
+// app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post_data'))
+// morgan.token('post_data', (req, res) => {
+// 	return (JSON.stringify({
+// 		name: req.body.name,
+// 		number: req.body.number
+// 	}))
+// })
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello World!</h1>')
